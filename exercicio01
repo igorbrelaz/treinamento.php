@@ -1,4 +1,7 @@
+EXERCÍCIO 01
+
 <?php
+
 $num1 = rand(10,50);
 $num2 = rand(1,20);
 $num3 = rand(25,80);
@@ -8,4 +11,93 @@ echo ($num1 . "<br>");
 echo ($num2 . "<br>");
 echo ($num3 . "<br>" . "<br>");
 echo ("Média: $media");
+
+?>
+
+
+EXERCÍCIO 03
+
+<?php
+
+$celsius = rand(1,100);
+$fahrenheit = (1.8 * $celsius) + 32;
+
+echo ("Convertendo Celsius para Fahrenheit" . "<br>" . "<br>");
+echo ("Graus Celsius: " . $celsius . "<br>");
+echo ("Conversão para Fahrenheit: " . $fahrenheit);
+
+?>
+
+
+EXERCÍCIO 04
+
+<?php
+
+$metros = rand(1,100);
+$centimetros = $metros * 100;
+
+echo ("Convertendo Metros para Centimetros" . "<br>" . "<br>");
+echo ("Metragem em metros: " . $metros . "<br>");
+echo ("Metragem em centimetro: " . $centimetros);
+
+?>
+
+
+
+EXERCÍCIO 05
+
+<?php
+
+    echo max(5, 8, 15, 22,39,50 . "<br>");
+    echo min(5, 8, 15, 22,39,50);
+
+?>
+
+
+EXERCÍCIO 06
+
+<?php
+
+$semana = array("1" => "Domingo", "2" => "Segunda", "3" => "Terça",
+"4" => "Quarta", "5" => "Quinta", "6" => "Sexta", "7" => "Sábado");
+
+echo $semana[7];
+
+?>
+
+
+EXERCÍCIO 07
+
+<?php
+
+$lado_a = 2;
+$lado_b = 4;
+$lado_c = 5;
+
+if (($lado_a < $lado_b + $lado_c) and ($lado_b < $lado_a + $lado_c)
+and ($lado_c < $lado_a + $lado_b))
+
+{
+    echo "Forma um triângulo" . "<br>"; 
+
+    if (($lado_a == $lado_b) and ($lado_a == $lado_c))
+
+    {
+        echo "Triângulo Equilátero.";
+    }
+
+    elseif (($lado_a == $lado_b) or ($lado_a == $lado_c) or ($lado_b == $lado_c))
+
+    {
+        echo "Triângulo Isósceles.";
+    }
+
+    else
+    echo "Triângulo Escaleno.";
+
+}
+
+else
+echo "Não forma triângulo";
+
 ?>
