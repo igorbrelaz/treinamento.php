@@ -49,8 +49,14 @@ EXERCÍCIO 05
 
 <?php
 
-    echo max(5, 8, 15, 22,39,50 . "<br>");
-    echo min(5, 8, 15, 22,39,50);
+function MaxMin (...$numeros)
+{
+    echo "Maior Número é ", max($numeros);
+    echo "<br>";
+    echo "Menor Número é ", min($numeros);
+}
+
+MaxMin(2, 5, 8, 12, 15, 19);
 
 ?>
 
