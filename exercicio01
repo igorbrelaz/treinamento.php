@@ -65,23 +65,39 @@ EXERCÍCIO 06
 
 <?php
 
-function dias_semana() {
+function semana($dias) {
 
-    $semana = array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado");
-    $numDias = 9;
+$days = array("1" => "Domingo", "2" => "Segunda", "3" => "Terça", "4" => "Quarta",
+"5" => "Quinta", "6" => "Sexta", "7" => "Domingo");
 
-    if ($numDias >= 1 and $numDias <= 7)
-    {
-        echo $semana[$numDias - 1];
+    if ($dias == 1) {
+        echo "Dia da semana é: ", $days[1];
     }
-    else
-    {
-        echo "Valor inválido.";
+    if ($dias == 2) {
+        echo "Dia da semana é: ", $days[2];
+    }
+    if ($dias == 3) {
+        echo "Dia da semana é: ", $days[3];
+    }
+    if ($dias == 4) {
+        echo "Dia da semana é: ", $days[4];
+    }
+    if ($dias == 5) {
+        echo "Dia da semana é: ", $days[5];
+    }
+    if ($dias == 6) {
+        echo "Dia da semana é: ", $days[6];
+    }
+    if ($dias == 7) {
+        echo "Dia da semana é: ", $days[7];
+    }
+    if ($dias <> $days) {
+        echo "O valor não é válido.";
     }
 
 }
 
-echo dias_semana();
+echo semana(8);
 
 ?>
 
