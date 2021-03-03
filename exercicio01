@@ -2,15 +2,14 @@ EXERCÍCIO 01
 
 <?php
 
-$num1 = rand(10,50);
-$num2 = rand(1,20);
-$num3 = rand(25,80);
-$media = ($num1 + $num2 + $num3)/3;
+function media(...$numeros){
+    $soma = array_sum($numeros);
+    $tamanho = count($numeros);
+    $media = $soma/$tamanho;
+    return $media;
+}
 
-echo ($num1 . "<br>");
-echo ($num2 . "<br>");
-echo ($num3 . "<br>" . "<br>");
-echo ("Média: $media");
+echo media(5, 10, 4, 9, 8);
 
 ?>
 
@@ -19,12 +18,13 @@ EXERCÍCIO 03
 
 <?php
 
-$celsius = rand(1,100);
-$fahrenheit = (1.8 * $celsius) + 32;
+function temperatura(){
+    $celsius = rand (20, 100);
+    $fahrenheit = $celsius * 9/5 + 32;
+    return $fahrenheit;
+}
 
-echo ("Convertendo Celsius para Fahrenheit" . "<br>" . "<br>");
-echo ("Graus Celsius: " . $celsius . "<br>");
-echo ("Conversão para Fahrenheit: " . $fahrenheit);
+echo temperatura();
 
 ?>
 
@@ -33,12 +33,13 @@ EXERCÍCIO 04
 
 <?php
 
-$metros = rand(1,100);
-$centimetros = $metros * 100;
+function metragem (){
+    $metro = rand(1, 10);
+    $centimetro = $metro * 100;
+    return $centimetro;
+}
 
-echo ("Convertendo Metros para Centimetros" . "<br>" . "<br>");
-echo ("Metragem em metros: " . $metros . "<br>");
-echo ("Metragem em centimetro: " . $centimetros);
+echo metragem();
 
 ?>
 
@@ -58,10 +59,23 @@ EXERCÍCIO 06
 
 <?php
 
-$semana = array("1" => "Domingo", "2" => "Segunda", "3" => "Terça",
-"4" => "Quarta", "5" => "Quinta", "6" => "Sexta", "7" => "Sábado");
+function dias_semana() {
 
-echo $semana[7];
+    $semana = array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado");
+    $numDias = 9;
+
+    if ($numDias >= 1 and $numDias <= 7)
+    {
+        echo $semana[$numDias - 1];
+    }
+    else
+    {
+        echo "Valor inválido.";
+    }
+
+}
+
+echo dias_semana();
 
 ?>
 
