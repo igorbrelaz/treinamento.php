@@ -1,0 +1,45 @@
+EXERCÍCIO 02 DE PHP
+
+
+function verificaCPF($cpf) {
+    
+    $s = $cpf;
+    $c = substr($s, 0, 9);
+    $dv = substr($s, 9, 2);
+    $d1 = 0;
+    $v = false;
+
+    for ($i = 0; $i < 9; $i++) {
+        $d1 = $d1 + substr($c, $i, 1) * (10 - $i);
+    }
+    if ($d1 == 0) {
+        return "CPF inválido";
+        $v = true;
+    }
+    $d1 = 11 - ($d1 % 11);
+    if ($d1 > 9) {
+        $d1 = 0;
+    }
+    if (substr($dv, 0, 1) != $d1) {
+        return "CPF inválido";
+        $v = true;
+    }
+    $d1 = $d1 * 2;
+    for ($i = 0; $i < 9; $i++) {
+        $d1 = $d1 + substr($c, $i, 1) * (11 - $i);
+    }
+    $d1 = 11 - ($d1 % 11);
+    if ($d1 > 9) {
+        $d1 = 0;
+    }
+    if (substr($dv, 1, 1) != $d1) {
+        return "CPF inválido!";
+        $v = true;
+    }
+    if (!$v) {
+        return "CPF válido";
+    }
+
+}
+
+echo verificaCPF(14433356912);
